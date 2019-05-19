@@ -8,7 +8,7 @@ class DriverAction(Action):
 
 def create_parser():
     parser = ArgumentParser(description="""
-    Backup PostgreSQL Databases locally or to AWS S3
+    Backup PostgreSQL Databases locally or to AWS S3.
     """
     )
 
