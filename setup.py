@@ -6,11 +6,18 @@ with open('README.md', 'r') as f:
 setup(
     name = 'pgbackup',
     version='0.1.0',
-    author='Davis Damian'
-    author_email='ddamian.sbp@gmail.com'
+    author='Davis Damian',
+    author_email='ddamian.sbp@gmail.com',
     description='A utility for backing up PostgreSQL databases.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/ddamian-SLO/python-pgbackup',
-    packages=find_packages('src')
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
+    install_requires=['boto3'],
+    entry_points={
+        'console_scripts': [
+            'pgbackup=pgbackup.cli:main'
+        ],
+    }
 )
